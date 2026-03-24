@@ -17,7 +17,11 @@ export class MovieController {
 
   @Post()
   async create(@Body() movie: CreateMovieDto): Promise<Movie> {
-    return await this.movieService.create(movie);
+    try {
+      return await this.movieService.create(movie);
+    } catch (error) {
+      throw new Error('Error creating movie'+error);
+    }
   }
 
   @Get(':id')
