@@ -8,7 +8,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   // Autoriser CORS
   app.enableCors({
-    origin: 'http://localhost:3000', // ton front
+    origin: 'https://heyama-web.netlify.app', // ton front
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // si tu gères les cookies ou JWT
   });
